@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaobaoExpress", "TaobaoExpress\TaobaoExpress.csproj", "{81065FFF-905A-41A0-9B5A-18163916A1F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaobaoExpress.Web", "TaobaoExpress.Web\TaobaoExpress.Web.csproj", "{81065FFF-905A-41A0-9B5A-18163916A1F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaobaoExpress.Model", "TaobaoExpress.Model\TaobaoExpress.Model.csproj", "{239E3260-8636-4983-BDB2-9E4D007C8311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaobaoExpress.Services", "TaobaoExpress.Services\TaobaoExpress.Services.csproj", "{05DFD9FC-B781-49D2-B940-45B2B879B769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaobaoExpress.DataAccess", "TaobaoExpress.DataAccess\TaobaoExpress.DataAccess.csproj", "{14383841-F156-48C0-ABCE-F9D966550A15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{81065FFF-905A-41A0-9B5A-18163916A1F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81065FFF-905A-41A0-9B5A-18163916A1F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81065FFF-905A-41A0-9B5A-18163916A1F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239E3260-8636-4983-BDB2-9E4D007C8311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239E3260-8636-4983-BDB2-9E4D007C8311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239E3260-8636-4983-BDB2-9E4D007C8311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239E3260-8636-4983-BDB2-9E4D007C8311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05DFD9FC-B781-49D2-B940-45B2B879B769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DFD9FC-B781-49D2-B940-45B2B879B769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05DFD9FC-B781-49D2-B940-45B2B879B769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05DFD9FC-B781-49D2-B940-45B2B879B769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14383841-F156-48C0-ABCE-F9D966550A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14383841-F156-48C0-ABCE-F9D966550A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14383841-F156-48C0-ABCE-F9D966550A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14383841-F156-48C0-ABCE-F9D966550A15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

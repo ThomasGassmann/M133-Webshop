@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using TaobaoExpress.DataAccess.Context;
 
 namespace TaobaoExpress
 {
@@ -16,6 +17,9 @@ namespace TaobaoExpress
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var context = ObjectFactory.Instance.GetInstance<TaobaoExpressContext>();
+            context.Database.CreateIfNotExists();
         }
     }
 }
