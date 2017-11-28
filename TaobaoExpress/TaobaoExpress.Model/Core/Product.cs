@@ -10,6 +10,8 @@
 
         public string Title { get; set; }
 
+        public double Price { get; set; }
+
         public long PictureId { get; set; }
 
         public Picture Picture { get; set; }

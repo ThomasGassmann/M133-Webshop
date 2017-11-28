@@ -1,5 +1,6 @@
 ﻿namespace TaobaoExpress.Services.Core
 {
+    using System.Data.Entity;
     using System.Linq;
     using TaobaoExpress.DataAccess.Context;
     using TaobaoExpress.Model.Core;
@@ -13,10 +14,11 @@
             this.context = context;
         }
 
-        public void Create(T entity)
+        public long Create(T entity)
         {
             this.context.Set<T>().Add(entity);
             this.context.SaveChanges();
+            return entity.Id;
         }
 
         public void Delete(long id)
@@ -33,7 +35,12 @@
 
         public IQueryable<T> Query()
         {
-            return this.context.Set<T>();
+            if (typeof(T) == typeof(Product))
+            {
+                return (IQueryable<T>)this.context.Set<Product>().Include(x => x.Picture);
+            }
+
+            return context.Set<T>();
         }
     }
 }

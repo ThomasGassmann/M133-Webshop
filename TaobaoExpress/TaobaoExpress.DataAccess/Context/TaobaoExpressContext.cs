@@ -15,6 +15,9 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("TaobaoExpress");
+            modelBuilder.Entity<Picture>().ToTable("Picture");
+            modelBuilder.Entity<Product>().ToTable("Product");
             base.OnModelCreating(modelBuilder);
         }
     }

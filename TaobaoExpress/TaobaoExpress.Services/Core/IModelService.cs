@@ -7,7 +7,7 @@
     {
         IQueryable<T> Query();
 
-        void Create(T entity);
+        long Create(T entity);
 
         void Delete(long id);
 

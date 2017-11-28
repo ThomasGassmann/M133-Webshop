@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Optimization;
-using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
-using TaobaoExpress.DataAccess.Context;
-
-namespace TaobaoExpress
+﻿namespace TaobaoExpress
 {
+    using System;
+    using System.Web;
+    using System.Web.Optimization;
+    using System.Web.Routing;
+    using TaobaoExpress.DataAccess.Context;
+
     public class Global : HttpApplication
     {
-        void Application_Start(object sender, EventArgs e)
+        public void Application_Start(object sender, EventArgs e)
         {
-            // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
