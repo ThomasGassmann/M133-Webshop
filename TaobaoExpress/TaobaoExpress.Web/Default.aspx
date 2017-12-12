@@ -1,21 +1,25 @@
 ﻿<%@ Page Title="Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TaobaoExpress._Default" %>
-
+<%@ Import Namespace="TaobaoExpress" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-    </style>
-    <ul class="list">
+    <table>
         <% foreach (var product in this.Products)
             { %>
-        <li class="list-item">
-            <div class="container">
-                <h1 class="title"><%= product.Title %></h1>
-                <div class="price"><%= product.Price %></div>
-                <img class="picture" src="<%= product.GetImagePath() %>" />
-                <div class="text">
-                    <%= product.GetMarkdownHtml() %>
-                </div>
-            </div>
-        </li>
+            <tr>
+                <td class="title">
+                    <%= product.Title %>
+                </td>
+                <td>
+                    <%= product.Price.ToSwissFranc() %>
+                </td>
+                <td>
+                    <img class="picture" src="<%= product.GetImagePath() %>" />
+                </td>
+                <td>
+                    <div class="text">
+                        <%= product.GetMarkdownHtml() %>
+                    </div>
+                </td>
+            </tr>
         <% } %>
-    </ul>
+    </table>
 </asp:Content>

@@ -24,13 +24,3 @@ textarea {
     max-width: 600px;
     width: 100%;
 }
-
-.list-item {
-    display: inline-block;
-    margin: 5px;
-    border: 1px solid black;
-    width: 45%;
-}
-
-.container {
-}
