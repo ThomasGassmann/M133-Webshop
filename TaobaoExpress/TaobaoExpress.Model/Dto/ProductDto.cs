@@ -20,27 +20,35 @@
 
         public byte[] ImageData { get; set; }
 
-        public string GetImagePath()
+        public string FormattedPrice => string.Format("{0:0.00}", this.Price);
+
+        public string ImagePath
         {
-            using (var memoryStream = new MemoryStream(this.ImageData))
+            get
             {
-                var serverPath = $"/Content/{this.Id}.jpg";
-                var path = HttpContext.Current.Server.MapPath("~" + serverPath);
-                if (File.Exists(path))
+                using (var memoryStream = new MemoryStream(this.ImageData))
                 {
+                    var serverPath = $"/Content/{this.Id}.jpg";
+                    var path = HttpContext.Current.Server.MapPath("~" + serverPath);
+                    if (File.Exists(path))
+                    {
+                        return serverPath;
+                    }
+
+                    var image = Image.FromStream(memoryStream);
+                    image.Save(path);
                     return serverPath;
                 }
-
-                var image = Image.FromStream(memoryStream);
-                image.Save(path);
-                return serverPath;
             }
         }
 
-        public string GetMarkdownHtml()
+        public string MarkdownHtml
         {
-            var markdown = new Markdown();
-            return markdown.Transform(this.MarkdownDescription);
+            get
+            {
+                var markdown = new Markdown();
+                return markdown.Transform(this.MarkdownDescription);
+            }
         }
     }
 }

@@ -2,11 +2,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="errorMessage" runat="server" />
+    <asp:Label runat="server" Text="Title"></asp:Label>
     <asp:TextBox TextMode="SingleLine" ID="title" runat="server" CssClass="formElement" />
+    <asp:Label runat="server" Text="Price"></asp:Label>
     <asp:TextBox TextMode="SingleLine" ID="price" type="number" step=".01" runat="server" CssClass="formElement"></asp:TextBox>
+    <asp:Label runat="server" Text="Description (Markdown)"></asp:Label>
     <asp:TextBox TextMode="MultiLine" CssClass="markdown formElement" ID="markdownText" runat="server" />
     <div id="preview">
     </div>
+    <asp:Label runat="server" Text="Image"></asp:Label>
     <asp:FileUpload ID="fileUpload" runat="server" />
     <asp:Button OnClick="CreateProduct" ID="createButton" runat="server" Text="Create" />
     <script>

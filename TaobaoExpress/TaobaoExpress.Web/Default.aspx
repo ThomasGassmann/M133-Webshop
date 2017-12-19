@@ -1,25 +1,30 @@
 ﻿<%@ Page Title="Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TaobaoExpress._Default" %>
 <%@ Import Namespace="TaobaoExpress" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <table>
-        <% foreach (var product in this.Products)
-            { %>
+    <asp:Repeater runat="server" ID="repeater">
+        <HeaderTemplate>
+            <table>
+        </HeaderTemplate>
+        <ItemTemplate>
             <tr>
                 <td class="title">
-                    <%= product.Title %>
+                    <%#  this.Eval("Title") %>
                 </td>
                 <td>
-                    <%= product.Price.ToSwissFranc() %>
+                    <%# this.Eval("FormattedPrice") %>
                 </td>
                 <td>
-                    <img class="picture" src="<%= product.GetImagePath() %>" />
+                    <img class="picture" src="<%# this.Eval("ImagePath") %>" />
                 </td>
                 <td>
                     <div class="text">
-                        <%= product.GetMarkdownHtml() %>
+                        <%# this.Eval("MarkdownHtml") %>
                     </div>
                 </td>
             </tr>
-        <% } %>
-    </table>
+        </ItemTemplate>
+        <FooterTemplate>
+            </table>
+        </FooterTemplate>
+    </asp:Repeater>
 </asp:Content>

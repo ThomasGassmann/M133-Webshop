@@ -14,15 +14,14 @@
         [Dependency]
         public IModelService<Product> ProductService { get; set; }
 
-        public ProductDto[] Products { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             var fetchedProducts = this.ProductService
                 .Query()
                 .ToList()
                 .Select(x => Mapper.Map<Product, ProductDto>(x));
-            this.Products = fetchedProducts.ToArray();
+            this.repeater.DataSource = fetchedProducts.ToArray();
+            this.repeater.DataBind();
         }
     }
 }
